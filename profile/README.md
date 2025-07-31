@@ -42,6 +42,8 @@ TL;DR:
 
    Other than that our system also has a gateway to act as the entrypoint of our system and all request will be redirect by it to the according service. A microservice approach really shines in a kubernetes setup that can really utilizes the power of k8s  providing robust orchestration, auto-scaling, and self-healing of individual microservices, making the entire system highly resilient, scalable, and much easier to manage. However, kubernetes are expensive so I was unable to introduce them here. Nevertheless, as I already did the work the project will be presented here with docker images for the services and a docker compose to run them in a docker environment.
 
+   
+
 3.  **Back-end Architecture:**
 
     Now let's explore in greater details the implementation of the system discussed, the core functionality and the business model is built in the backend, to accomplish this I chose the Spring ecosystem, so I used Java to build the systems. All microservices are Spring projects, utilizing SpringBoot to handle auto configurations, within each microservice there is a layered designed project with very specific purposes.
