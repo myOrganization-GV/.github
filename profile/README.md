@@ -23,7 +23,7 @@ TL;DR:
     The core idea is very simple, a website users can create an account and rent a selected car from a catalog for a period of time, much like many e-commerces out there. Then I overengineered the system with everything I thought relevant to the project, designing the core renting functionality into an asynchrounous communication between some microservices. To put the project in practice I used spring the create the mentioned services and used nextjs to build the front end application.
 2.  **System Design**
 
-    ![Alt text for car rental diagram](car-rental-diagram7.png)
+    ![Alt text for car rental diagram](car-rental-diagram.png)
 
     The main idea for the system is to use a microservice approach to the create the main car renting feature. With that in mind I created four microservices, the inventory microservice, the user microservice, the payment microservice and finally the booking microservice. All of them working as independently as possible from each other, each of the microservices have their own database schema, their own git repository, their own ci/cd pipeline.
 
