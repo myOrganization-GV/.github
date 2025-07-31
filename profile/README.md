@@ -6,7 +6,7 @@ TL;DR:
 
  -- The back end was built using the extremely famous Java's framework **Spring** together with a microservice architecture system design. Spring's tools and ecosystem was extensivily used to various purposes. Spring data JPA was used to handle the repositories. Spring Boot to manage auto-configurations. Spring Security to handle authorizations with a hybrid system using a JWT approach together with oauth social authentications. I integrated the system with Mercado Pago SDK to handle the payment processing. MySQL was chosen for the database managent system for all services and Kafka to handle transactions in the system.
 
- --All systems in the project was made into a docker image uploaded to dockerhub. Also jenkins pipelines  was created for the microservices ci/cd. Now for the more detailed description of the project.
+ --All systems in the project was made into a docker image uploaded to dockerhub. Also jenkins pipelines  were created for the microservices ci/cd. Now for the more detailed description of the project.
 
 ---
 
