@@ -41,7 +41,7 @@ TL;DR:
 
    Other than that our system also has a gateway to act as the entrypoint of our system and all request will be redirect by it to the according service. A microservice approach really shines in a kubernetes setup that can really utilizes the power of k8s  providing robust orchestration, auto-scaling, and self-healing of individual microservices, making the entire system highly resilient, scalable, and much easier to manage. However, kubernetes are expensive so I was unable to introduce them here. Nevertheless, as I already did the work the project will be presented here with docker images for the services and a docker compose to run them in a docker environment.
 
-2.  **Back-end Architecture:**
+3.  **Back-end Architecture:**
 
     Now let's explore in greater details the implementation of the system discussed, the core functionality and the business model is built in the backend, to accomplish this I chose the Spring ecosystem, so I used Java to build the systems. All microservices are Spring projects, utilizing SpringBoot to handle auto configurations, within each microservice there is a layered designed project with very specific purposes.
 
@@ -55,6 +55,5 @@ TL;DR:
 
     The configuration of all these microservices are served through a config server. I have a private config repo where I store all config files for the project, using the Config server from the Spring Cloud project this setup provides a single, version-controlled source of truth for all application settings, allowing microservices to retrieve their necessary configurations dynamically. Also, we have an Eureka Server to handle service registration and discovery for all our microservices. Each microservice registers itself with Eureka upon startup, making its location and capabilities known to the rest of the system. This allows other services to find and communicate with each other dynamically, without needing to hardcode IP addresses or ports.
 
-2.  **Front-end (Client Application):**
 
 
