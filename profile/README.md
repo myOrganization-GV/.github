@@ -24,7 +24,7 @@ TL;DR:
 2.  **System Design**
 
     
-<img src="car-rental-diagram.png" alt="Car Rental System Microservices Diagram" width="700">
+<img src="car-rental-diagram2.png" alt="Car Rental System Microservices Diagram" width="700">
 
 
    The main idea for the system is to use a microservice approach to the create the main car renting feature. With that in mind I created four microservices, the inventory microservice, the user microservice, the payment microservice and finally the booking microservice. All of them working as independently as possible from each other, each of the microservices have their own database schema, their own git repository, their own ci/cd pipeline.
