@@ -13,13 +13,7 @@ TL;DR:
 **Summary:**
 1.  Introduction
 2.  Back-end Architecture
-3.  Front-end (Client Application)
-4.  Databases
-5.  Inter-service Communication & Distributed Transactions
-6.  Observability & Monitoring
-7.  CI/CD (Continuous Integration/Continuous Deployment)
-8. Wrap up and future considerations
-
+3.  Front-end 
 ---
 
 1.  **Introduction**
@@ -60,27 +54,5 @@ TL;DR:
     The configuration of all these microservices are served through a config server. I have a private config repo where I store all config files for the project, using the Config server from the Spring Cloud project this setup provides a single, version-controlled source of truth for all application settings, allowing microservices to retrieve their necessary configurations dynamically. Also, we have an Eureka Server to handle service registration and discovery for all our microservices. Each microservice registers itself with Eureka upon startup, making its location and capabilities known to the rest of the system. This allows other services to find and communicate with each other dynamically, without needing to hardcode IP addresses or ports.
 
 2.  **Front-end (Client Application):**
-    * **Client:** Represents the user-facing application (web, mobile, etc.) that interacts with the system solely through the **API Gateway**. It provides the user interface for Browse cars, making bookings, managing profiles, and processing payments.
 
-3.  **Database Schema (Conceptual per Service):**
-    * **User DB:** Stores user-related information (e.g., `users` table with fields like `id`, `username`, `email`, `password_hash`, `first_name`, `last_name`, `contact_info`).
-    * **Inventory DB:** Contains details about avg., `cars` table with fields like `id`, `make`, `model`, `year`, `license_plate`, `status` (available, rented, maintenance), `daily_rate`).
-    * **Booking DB:** Manages rental reservations (e.g., `bookings` table with fields like `id`, `user_id`, `car_id`, `start_date`, `end_date`, `total_price`, `status` (pending, confirmed, cancelled, completed)).
-    * **Payment DB:** Records payment transactions (e.g., `payments` table with fields like `id`, `booking_id`, `amount`, `payment_date`, `status` (successful, failed), `transaction_id`).
-    * *Note:* While these are conceptually separate, they currently share a single MySQL instance, managed by the `mysql` Docker service, with distinct schemas or tables for each service's data.
 
-4.  **Inter-service Communication & Distributed Transactions:**
-    * **Saga Orchestrator:** Manages complex business processes (Sagas) that span multiple microservices, ensuring data consistency and handling failures in distributed transactions.
-    * **Kafka:** A high-throughput, fault-tolerant distributed streaming platform used as the message broker for asynchronous communication between services and for the Saga Orchestrator.
-    * **Zookeeper:** A distributed coordination service used by Kafka for managing its distributed state.
-    * **Kafdrop:** A web UI for monitoring and managing Kafka topics and messages.
-
-5.  **Observability & Monitoring:**
-    * **ELK Stack (Elasticsearch, Logstash, Kibana):**
-        * **Logstash:** Collects, parses, and transforms logs from all microservices.
-        * **Elasticsearch:** Stores and indexes the processed logs, enabling fast and complex queries.
-        * **Kibana:** Provides powerful visualization tools and dashboards for analyzing logs, monitoring system health, and troubleshooting.
-    * **Zipkin:** A distributed tracing system that collects and visualizes latency data across all microservices, helping to understand how requests flow through the system and pinpoint performance bottlenecks.
-
-6.  **CI/CD (Continuous Integration/Continuous Deployment):**
-    * **Jenkins:** An open-source automation server that orchestrates the software development process, including automated building, testing, and deployment of microservices to ensure rapid and reliable releases.
