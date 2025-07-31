@@ -25,6 +25,8 @@ TL;DR:
 
    <img src="car-rental-diagram.png" alt="Alt text for car rental diagram" width="500">
 
+   -
+
     The main idea for the system is to use a microservice approach to the create the main car renting feature. With that in mind I created four microservices, the inventory microservice, the user microservice, the payment microservice and finally the booking microservice. All of them working as independently as possible from each other, each of the microservices have their own database schema, their own git repository, their own ci/cd pipeline.
 
     The inventory microservice is responsible for keeping track of the cars the company would have at it's disposal. The database of this service has info of the cars availability, also the car's renting price and details. The user microservice is responsible for the management of the users registration and login to the system through JWT's, also keep tracks of users' sensible information. The payment microservice is responsible for processing the payment transactions, also it connects with a third party payment gateway, particularly I chose the Mercado Pago system. Finally the booking microservice handles the renting details such as the reservation, the total price calculation and schedulling.
