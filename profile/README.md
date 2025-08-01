@@ -18,7 +18,7 @@ TL;DR:
 4.  Front end application
 5.  Elasticsearch, Logstash and Kibana
 6.  CI/CD and Docker
-
+7.  Wrap up and conclusions
 ---
 
 1 **Introduction**
