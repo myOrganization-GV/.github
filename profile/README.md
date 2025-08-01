@@ -1,6 +1,6 @@
 # Car Rental Microservice Project
 
-(Portugues Version at the end) TL;DR:
+(Portuguese Version at the end) TL;DR:
 
 -- A study project to employ modern web development techniques. The system is built to provide users a catalog of cars to be rented for a period of time. The front end was built with the **Next js** 15 framework, many of the features available in the framework was used to make concise and simple, yet effective, UI code. Such features as next-auth, server side rendering, action-states and many others.
 
