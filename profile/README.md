@@ -142,13 +142,15 @@ O problema é que, de uma perspectiva de aprendizado, microsserviços são difí
 
 Projetar um sistema com uma abordagem de microsserviços é bem diferente da maneira monolítica comum. Foi por isso que eu criei este projeto: para elaborar um projeto de microsserviços com complexidade moderada, mantendo-me o mais próximo possível de um projeto de microsserviços do mundo real.
 
+
 A ideia central é muito simples: um site onde os usuários podem criar uma conta e alugar um carro selecionado de um catálogo por um período de tempo, bem parecido com muitos sites de vendas que existem por aí. Em seguida, eu intencionalmente introduzi certa complexidade no sistema com tudo o que eu achava relevante para o projeto, projetando a funcionalidade de aluguel principal com comunicação assíncrona entre vários microsserviços. Para colocar o projeto em prática, usei o Spring para criar os serviços e o Next.js para construir o aplicativo front-end.
+
 ---
 2 **System Design**
 
 <img src="car-rental-diagram2.png" alt="Car Rental System Microservices Diagram" width="600">
 
-A ideia principal do sistema é utilizar uma arquitetura de microsserviços para oferecer a funcionalidade de aluguel de carros em um website. Com isso em mente, criei quatro microsserviços: o microsserviço de inventário, o de usuário, o de pagamento e, por fim, o de reservas. Todos eles funcionam da forma mais independente possível uns dos outros. Cada microsserviço possui seu próprio esquema de banco de dados, seu próprio repositório Git e seu próprio pipeline de CI/CD.
+O objetivo deste projeto é utilizar uma arquitetura de microsserviços para oferecer a funcionalidade de aluguel de carros em um website. Com isso em mente, criei quatro microsserviços: o microsserviço de inventário, o de usuário, o de pagamento e, por fim, o de reservas. Todos eles funcionam da forma mais independente possível uns dos outros. Cada microsserviço possui seu próprio esquema de banco de dados, seu próprio repositório Git e seu próprio pipeline de CI/CD.
 
 O microsserviço de inventário é responsável por controlar os carros que a empresa tem à disposição. O banco de dados deste serviço contém informações sobre a disponibilidade dos carros, seus preços de aluguel e outros detalhes. O microsserviço de usuário gerencia o registro e o login dos usuários no sistema via JWTs e também armazena informações sensíveis dos usuários. O microsserviço de pagamento é responsável por processar as transações financeiras, conectando-se a um gateway de pagamento de terceiros; neste projeto, eu escolhi o sistema do Mercado Pago. Finalmente, o microsserviço de reservas cuida dos detalhes do aluguel, como reservas, cálculo do preço total e agendamento.
 
