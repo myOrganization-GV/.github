@@ -127,10 +127,9 @@ TL;DR:
 1.  Introdução
 2.  System Design
 3.  Implementação do Back-end
-4.  Implementação do Back-end
-5.  Elasticsearch, Logstash and Kibana
-6.  CI/CD e Docker
-7.  Apanhado geral e conclusões
+4.  Elasticsearch, Logstash and Kibana
+5.  CI/CD e Docker
+6.  Apanhado geral e conclusões
 
 ---
 
